@@ -1,4 +1,5 @@
 .task {
+  background-color: #92d4fa;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -6,7 +7,6 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   margin-bottom: 10px;
-  background-color: #fff;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   &:hover {
@@ -17,6 +17,8 @@
 .taskLabel {
   display: flex;
   align-items: center;
+  flex: 3;
+  margin-right: 10px;
 }
 
 .taskTitle {
@@ -26,6 +28,7 @@
 }
 
 .buttonBlock {
+  flex: 1;
   button {
     margin-right: 15px;
     
@@ -45,8 +48,8 @@
 }
 
 .buttonEdit {
+  border: 0;
   background-color: #fff;
-  border: 1px solid #ccc;
   border-radius: 5px;
   padding: 5px 10px;
   cursor: pointer;
@@ -58,8 +61,8 @@
 }
 
 .buttonDelete {
+  border: 0;
   background-color: #fff;
-  border: 1px solid #ccc;
   border-radius: 5px;
   padding: 5px 10px;
   cursor: pointer;
@@ -68,4 +71,12 @@
     background-color: #c9341a;
     color: #fff;
   }
+}
+
+.inputEdit {
+  border: none;
+  padding: 5px;
+  background: none;
+  box-shadow: 0 4px 0 -3px #3f72af;
+  width: 100%;
 }

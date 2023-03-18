@@ -15,6 +15,10 @@ function App() {
     setTasks(tasks.filter((task) => task.id !== id));
   }
 
+  function editTask(id, title) {
+    setTasks(tasks.map((task) => (task.id === id ? { ...task, title } : task)));
+  }
+
   return (
     <article className={styles.article}>
       <h1 className={styles.title}>Todo App</h1>
@@ -24,7 +28,7 @@ function App() {
       <section>
         {tasks.length <= 0 && <p className={styles.noTasks}>No tasks</p>}
         {tasks.map((task) => (
-          <Task key={task.id} id={task.id} title={task.title} removeTask={removeTask} />
+          <Task key={task.id} id={task.id} title={task.title} removeTask={removeTask} editTask={editTask}/>
         ))}
       </section>
     </article>
