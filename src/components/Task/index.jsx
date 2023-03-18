@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './index.module.scss';
 import EditIcon from '@mui/icons-material/Edit';
 
-function Task({ title }) {
+function Task({ id, title, removeTask }) {
   return (
     <div className={styles.task}>
       <label className={styles.taskLabel}>
@@ -13,7 +13,7 @@ function Task({ title }) {
         <button onClick={() => {}} aria-label="Edit" className={styles.buttonEdit}>
           Edit
         </button>
-        <button onClick={() => {}} aria-label="Delete" className={styles.buttonDelete}>
+        <button onClick={() => removeTask(id)} aria-label="Delete" className={styles.buttonDelete}>
           Delete
         </button>
       </div>
