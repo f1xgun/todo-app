@@ -1,10 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import styles from './index.module.scss';
 
 function Task({ id, title, removeTask, editTask }) {
   const [isEditMode, setIsEditMode] = useState(false);
   const [editValue, setEditValue] = useState(title);
-  
+  const editTitleInput = useRef(null);
+
+  useEffect(() => {
+    if (isEditMode && editTitleInput) {
+      editTitleInput.current.focus();
+    }
+  }, [isEditMode]);
 
   return (
     <div className={styles.task}>
@@ -19,6 +25,13 @@ function Task({ id, title, removeTask, editTask }) {
             value={editValue}
             onChange={(e) => setEditValue(e.target.value)}
             className={styles.inputEdit}
+            ref={editTitleInput}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                setIsEditMode(!isEditMode);
+                editTask(id, editValue);
+              }
+            }}
           />
         ) : (
           <h3 className={styles.taskTitle}>{title}</h3>
@@ -27,7 +40,7 @@ function Task({ id, title, removeTask, editTask }) {
       <div className={styles.buttonBlock}>
         {isEditMode ? (
           <button
-            aria-label="Edit"
+            aria-label="Save"
             className={styles.buttonEdit}
             onClick={() => {
               setIsEditMode(!isEditMode);

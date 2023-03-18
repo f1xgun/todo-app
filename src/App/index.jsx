@@ -16,7 +16,7 @@ function App() {
   }
 
   function editTask(id, title) {
-    setTasks(tasks.map((task) => (task.id === id ? { ...task, title } : task)));
+    if (title) setTasks(tasks.map((task) => (task.id === id ? { ...task, title } : task)));
   }
 
   return (
