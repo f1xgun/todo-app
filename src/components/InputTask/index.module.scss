@@ -1,0 +1,31 @@
+.inputTask {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.inputValue {
+  border: 1px solid #b1b1b1;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding: 9px 10px;
+  min-height: 32px;
+  width: 100%;
+  flex: 5;
+}
+
+.inputButton {
+  border: 1px solid #b1b1b1;
+  flex: 1;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 9px 10px;
+  background-color: #b1b1b1;
+  color: #fff;
+  cursor: pointer;
+  width: 60px;
+  transition: background-color 0.3s ease-in;
+  &:hover {
+    background-color: #0b4283;
+  }
+}
